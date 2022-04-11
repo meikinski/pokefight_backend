@@ -17,6 +17,11 @@ app.use(express.json())
 app.use(bodyParser.json())
 
 /*Pokemon Data*/
+app.get('/', (req, res) => {
+    res.send("Welcome to Pokefight Backend")
+})
+
+
 app.get('/pokemon', (req, res) => {
     fs.readFile('./pokedex.json', 'utf8', (err, data) => {
         res.send(JSON.parse(data));
