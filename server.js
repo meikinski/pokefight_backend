@@ -3,7 +3,7 @@ const cors = require('cors')
 require('dotenv').config();
 const mongoose = require('mongoose')
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000
 const fs = require('fs')
 let jsonData = require('./pokedex.json')
 const bodyParser = require('body-parser')
