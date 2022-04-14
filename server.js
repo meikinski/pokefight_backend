@@ -60,6 +60,11 @@ app.post('/game/save', (req, res) => {
     .then((fight) => res.send(fight))
 })
 
+app.put('/game/update', (req, res) => {
+    Fight.findOneAndUpdate({user: req.body.user, games_played: req.body.games_played, games_won: req.body.games_won})
+    .then((fight) => res.send(fight))
+})
+
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
